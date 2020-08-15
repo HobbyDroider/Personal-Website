@@ -25,7 +25,11 @@
   	})
 
 
-  	/*---------------------------------------------------- */
+
+
+
+
+	/*---------------------------------------------------- */
   	/* FitText Settings
   	------------------------------------------------------ */
   	setTimeout(function() {
@@ -136,7 +140,9 @@
 	
 	/*-----------------------------------------------------*/
   	/* Navigation Menu
-   ------------------------------------------------------ */  
+   ------------------------------------------------------ */
+
+
    var toggleButton = $('.menu-toggle'),
        nav = $('.main-navigation');
 
@@ -199,11 +205,14 @@
 
     	$('html, body').stop().animate({
        	'scrollTop': $target.offset().top
-      }, 800, 'swing', function () {
+      }, 400, 'swing', function () {
       	window.location.hash = target;
       });
 
-  	});  
+  	});
+
+
+
   
 
    /*---------------------------------------------------- */
@@ -289,3 +298,17 @@
 	});		
 
 })(jQuery);
+
+
+window.onload = function () {
+
+	/*Hiding the navigation on the first site*/
+	$('header').hide();
+	$(window).scroll(function () {
+		if ($(this).scrollTop() >= $('#intro').height() - 1) {
+			$('header').fadeIn(200);
+		} else {
+			$('header').fadeOut(200);
+		}
+	});
+}
