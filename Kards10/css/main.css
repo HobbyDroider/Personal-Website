@@ -88,7 +88,7 @@ a, a:visited {
 }
 
 a:hover, a:focus, a:active {
-  color: #f7fdff;
+  color: #1e92d4;
   outline: 0;
 }
 
@@ -336,7 +336,7 @@ ul.disc li::before {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #f7fdff;
+  background: #1e92d4;
   position: absolute;
   left: -17px;
   top: 11px;
@@ -345,7 +345,7 @@ ul.disc li::before {
 
 dt {
   margin: 0;
-  color: #f7fdff;
+  color: #1e92d4;
 }
 
 dd {
@@ -477,7 +477,7 @@ img.pull-left {
 }
 
 .pace .pace-progress {
-  background: #f7fdff;
+  background: #1e92d4;
   position: fixed;
   z-index: 900;
   top: 0;
@@ -523,7 +523,7 @@ img.pull-left {
   border-top: 11px solid rgba(255, 255, 255, 0.1);
   border-right: 11px solid rgba(255, 255, 255, 0.1);
   border-bottom: 11px solid rgba(255, 255, 255, 0.1);
-  border-left: 11px solid #f7fdff;
+  border-left: 11px solid #1e92d4;
   -webkit-animation: load 1.1s infinite linear;
   animation: load 1.1s infinite linear;
   display: block;
@@ -654,7 +654,7 @@ input[type=password]:focus,
 textarea:focus,
 select:focus {
   color: #2f6e9d;
-  border-bottom: 1px solid #f7fdff;
+  border-bottom: 1px solid #1e92d4;
 }
 
 label, legend {
@@ -815,8 +815,8 @@ button.stroke.large, .button.stroke.large {
 }
 
 button.stroke:hover, .button.stroke:hover {
-  border: 3px solid #f7fdff;
-  color: #f7fdff;
+  border: 3px solid #1e92d4;
+  color: #1e92d4;
 }
 
 button::-moz-focus-inner, input::-moz-focus-inner {
@@ -1023,7 +1023,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 }
 
 .stats-tabs li a:hover {
-  color: #f7fdff;
+  color: #1e92d4;
 }
 
 .stats-tabs li a em {
@@ -1207,7 +1207,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 }
 
 .section-intro h5 {
-  color: #f7fdff;
+  color: #1e92d4;
   font-size: 1.6rem;
   line-height: 1.875;
   margin-bottom: 0.3rem;
@@ -1263,13 +1263,14 @@ header .row {
 
 /*nav color*/
 header .top-bar {
-  background: #0f6598;
-  opacity: 0.7;
+  background: #ffffff;
+  box-shadow: 0px 1px 10px -2px rgba(0, 0, 0, 0.15);
   width: 100%;
-  min-height: 66px;
+  min-height: 56px;
   left: 0;
   top: 0;
-  /*border-radius: 0 0 10px 10px;*/
+  /*box-shadow: 0px 24px 64px rgba(0,0,0,0.24);*/
+  /*border-radius: 0 0 10px 10px; */
 }
 
 header .logo {
@@ -1278,6 +1279,7 @@ header .logo {
   margin-right: 50px;
   margin-top: 25px;
   position: relative;
+  color: #1e92d4 !important;
 }
 
 header .logo a {
@@ -1299,18 +1301,18 @@ header .logo a {
  * -------------------------------------------------------------------
  */
 .menu-toggle {
-  float: left;
+  float: right;
   width: 40px;
   height: 40px;
-  margin-left: 20px;
-  margin-top: 13px;
+  margin-right: 20px;
+  margin-top: 7px;
   display: block;
   position: relative;
 }
 
 .menu-toggle span {
   display: block;
-  background-color: #f7fdff;
+  background-color: #1e92d4;
   width: 24px;
   height: 3px;
   margin-top: -1.5px;
@@ -1372,7 +1374,7 @@ header .logo a {
 }
 
 .menu-toggle.is-clicked span::before, .menu-toggle.is-clicked span::after {
-  background-color: #f7fdff;
+  background-color: #1e92d4;
   -moz-transition-delay: 0s, 0.2s;
   -o-transition-delay: 0s, 0.2s;
   -webkit-transition-delay: 0s, 0.2s;
@@ -1401,13 +1403,46 @@ header .logo a {
   font-family: "poppins-medium", sans-serif;
   font-size: 1.5rem;
   position: absolute;
-  top: 100%;
+  top: 80%;
   left: 0;
+}
+
+/* desktop */
+.main-navigation-desktop {
+  float: left;
+  position: relative;
+  margin-left: -100px;
+  font-family: "poppins-medium", sans-serif;
+  font-size: 1.5rem;
+  margin-top: 12px;
+}
+
+.main-navigation-desktop li a {
+  color: #3b3a3a;
+  width: auto;
+  padding: 15px 0;
+  padding-right: 3rem;
+  margin-right: 20px;
+  line-height: 16px;
+  border: none;
+}
+
+.main-navigation-desktop li {
+  display: inline-block;
+}
+
+.main-navigation-desktop li a:hover {
+  color: #1e92d4;
+}
+
+.main-navigation-desktop li.current > a {
+  background: none;
+  color: #1e92d4;
 }
 
 /* dropdown nav */
 .main-navigation {
-  background: #000000;
+  background: #ffffff;
   padding: 24px 30px 42px;
   margin: 0;
   width: 100%;
@@ -1425,7 +1460,7 @@ header .logo a {
 
 .main-navigation li a {
   display: block;
-  color: #FFFFFF;
+  color: #3b3a3a;
   width: auto;
   padding: 15px 0;
   line-height: 16px;
@@ -1433,13 +1468,20 @@ header .logo a {
 }
 
 .main-navigation li a:hover {
-  color: #f7fdff;
+  color: #1e92d4;
   padding-left: 1rem;
 }
 
 .main-navigation li.current > a {
   background: none;
-  color: #f7fdff;
+  color: #1e92d4;
+}
+
+/*
+Hide burger button till mobile
+*/
+.menu-toggle {
+  display: none;
 }
 
 /**
@@ -1450,6 +1492,14 @@ header .logo a {
 @media only screen and (max-width: 1024px) {
   header .top-bar {
     left: 60px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .main-navigation-desktop {
+    display: none;
   }
 }
 @media only screen and (max-width: 768px) {
@@ -1494,7 +1544,7 @@ header .logo a {
   width: 100%;
   height: 100%;
   background: #111111;
-  opacity: 0.85;
+  opacity: 0.65;
 }
 
 .intro-content {
@@ -1535,7 +1585,7 @@ header .logo a {
 }
 
 .intro-content .intro-position {
-  font-family: "lora-regular", serif;
+  font-family: "poppins-medium", serif;
   font-size: 2.3rem;
   line-height: 2.4rem;
   padding: 1rem;
@@ -1854,7 +1904,7 @@ header .logo a {
 }
 
 #resume .resume-header h2 {
-  color: #f7fdff;
+  color: #1e92d4;
 }
 
 #resume .resume-timeline {
@@ -2392,7 +2442,7 @@ header .logo a {
 }
 
 #services .section-intro h5 {
-  color: #f7fdff;
+  color: #1e92d4;
 }
 
 #services .section-intro p {
@@ -2420,7 +2470,7 @@ header .logo a {
 
 .services-list .icon i {
   font-size: 5.4rem;
-  color: #f7fdff;
+  color: #1e92d4;
 }
 
 .services-list h3 {
@@ -2453,7 +2503,7 @@ header .logo a {
 }
 
 .owl-theme .owl-controls .owl-page.active span {
-  background: #f7fdff;
+  background: #1e92d4;
 }
 
 /**
@@ -2546,7 +2596,7 @@ header .logo a {
 }
 
 #contact .section-intro h5 {
-  color: #f7fdff;
+  color: #1e92d4;
 }
 
 #contact .section-intro p {
@@ -2610,7 +2660,7 @@ header .logo a {
   padding: 0 2rem;
   margin: 0;
   color: #FFFFFF;
-  background: #f7fdff;
+  background: #1e92d4;
 }
 
 #contact form .form-field label::after {
@@ -2620,7 +2670,7 @@ header .logo a {
   margin-top: -6px;
   border-top: 5px solid transparent;
   border-bottom: 5px solid transparent;
-  border-right: 5px solid #f7fdff;
+  border-right: 5px solid #1e92d4;
   content: "";
 }
 
@@ -2645,7 +2695,7 @@ header .logo a {
 #contact input[type=text]:focus,
 #contact input[type=password]:focus,
 #contact input[type=email]:focus {
-  border-color: #f7fdff;
+  border-color: #1e92d4;
   color: #FFFFFF;
 }
 
@@ -2655,7 +2705,7 @@ header .logo a {
 }
 
 #contact textarea:focus {
-  border-color: #f7fdff;
+  border-color: #1e92d4;
   color: #FFFFFF;
 }
 
@@ -2668,7 +2718,7 @@ header .logo a {
   padding: 0 3rem;
   margin-top: 4.8rem;
   width: 100%;
-  background: #f7fdff;
+  background: #1e92d4;
   color: #FFFFFF;
 }
 
@@ -2690,7 +2740,7 @@ header .logo a {
 }
 
 #message-success {
-  color: #f7fdff;
+  color: #1e92d4;
 }
 
 #message-warning i, #message-success i {
@@ -2744,7 +2794,7 @@ header .logo a {
 }
 
 .contact-info h5 {
-  color: #f7fdff;
+  color: #1e92d4;
 }
 
 /**
@@ -2822,7 +2872,7 @@ footer a, footer a:visited {
 }
 
 footer a:hover, footer a:focus {
-  color: #f7fdff;
+  color: #1e92d4;
 }
 
 footer .row {

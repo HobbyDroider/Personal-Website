@@ -47,10 +47,11 @@
  */
 
 $side-color: #2f6e9d;
-$burger-button: #f7fdff;
+$burger-button: #1e92d4;
 $offer-bg: #3d84ab;
 
 $bg-jpg: #3d84ab;
+$nav-color: #ffffff;
 
 
 html {
@@ -1289,13 +1290,14 @@ header .row {
 /*nav color*/
 
 header .top-bar {
-  background: #0f6598;
-  opacity: 0.7;
+  background: $nav-color;
+  box-shadow: 0px 1px 10px -2px rgba(0, 0, 0, 0.15);
   width: 100%;
-  min-height: 66px;
+  min-height: 56px;
   left: 0;
   top: 0;
-  /*border-radius: 0 0 10px 10px;*/
+  /*box-shadow: 0px 24px 64px rgba(0,0,0,0.24);*/
+  /*border-radius: 0 0 10px 10px; */
 }
 
 header .logo {
@@ -1304,6 +1306,7 @@ header .logo {
   margin-right: 50px;
   margin-top: 25px;
   position: relative;
+  color: $burger-button !important;
 }
 
 header .logo a {
@@ -1316,7 +1319,7 @@ header .logo a {
   color: transparent;
   width: 92px;
   height: 15px;
- /* background: url("../images/logo.png") no-repeat center;*/
+  /* background: url("../images/logo.png") no-repeat center;*/
   background-size: 92px 15px;
 }
 
@@ -1325,11 +1328,11 @@ header .logo a {
  * -------------------------------------------------------------------
  */
 .menu-toggle {
-  float: left;
+  float: right;
   width: 40px;
   height: 40px;
-  margin-left: 20px;
-  margin-top: 13px;
+  margin-right: 20px;
+  margin-top: 7px;
   display: block;
   position: relative;
 }
@@ -1427,15 +1430,47 @@ header .logo a {
   font-family: "poppins-medium", sans-serif;
   font-size: 1.5rem;
   position: absolute;
-  top: 100%;
+  top: 80%;
   left: 0;
 }
 
+/* desktop */
+.main-navigation-desktop {
+  float: left;
+  position: relative;
+  margin-left: -100px;
+  font-family: "poppins-medium", sans-serif;
+  font-size: 1.5rem;
+  margin-top: 12px;
+}
+
+.main-navigation-desktop li a {
+  color: #3b3a3a;
+  width: auto;
+  padding: 15px 0;
+  padding-right: 3rem;
+  margin-right: 20px;
+  line-height: 16px;
+  border: none;
+}
+
+.main-navigation-desktop li {
+  display: inline-block;
+}
+
+.main-navigation-desktop li a:hover {
+  color: $burger-button;
+}
+
+.main-navigation-desktop li.current > a {
+  background: none;
+  color: $burger-button;
+}
 
 
 /* dropdown nav */
 .main-navigation {
-  background: #000000;
+  background: $nav-color;
   padding: 24px 30px 42px;
   margin: 0;
   width: 100%;
@@ -1445,7 +1480,6 @@ header .logo a {
 }
 
 
-
 .main-navigation > li {
   display: block;
   height: auto;
@@ -1453,9 +1487,10 @@ header .logo a {
   padding: 0;
 }
 
+
 .main-navigation li a {
   display: block;
-  color: #FFFFFF;
+  color: #3b3a3a;
   width: auto;
   padding: 15px 0;
   line-height: 16px;
@@ -1472,6 +1507,14 @@ header .logo a {
   color: $burger-button;
 }
 
+/*
+Hide burger button till mobile
+*/
+
+.menu-toggle {
+  display: none;
+}
+
 /**
  * responsive:
  * header styles
@@ -1480,6 +1523,14 @@ header .logo a {
 @media only screen and (max-width: 1024px) {
   header .top-bar {
     left: 60px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .main-navigation-desktop {
+    display: none;
   }
 }
 
@@ -1530,7 +1581,7 @@ header .logo a {
   width: 100%;
   height: 100%;
   background: #111111;
-  opacity: .85;
+  opacity: .65;
 }
 
 .intro-content {
@@ -1574,7 +1625,7 @@ header .logo a {
 }
 
 .intro-content .intro-position {
-  font-family: "lora-regular", serif;
+  font-family: "poppins-medium", serif;
   font-size: 2.3rem;
   line-height: 2.4rem;
   padding: 1rem;
@@ -2966,7 +3017,6 @@ footer .copyright span:last-child::after {
 * {
 # border:1 px red solid;
 }
-
 
 
 /*# sourceMappingURL=main.css.map */
