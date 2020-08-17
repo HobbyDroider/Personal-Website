@@ -71,7 +71,7 @@ body {
   font-family: "lora-regular", serif;
   font-size: 1.7rem;
   line-height: 3rem;
-  color: #6e6e6e;
+  color: #626262;
 }
 
 /**
@@ -164,7 +164,13 @@ p.lead {
   font-family: "lora-regular", serif;
   font-size: 2rem;
   line-height: 1.8;
-  color: #888888;
+  color: #737373;
+}
+
+p.lead-small {
+  font-family: "lora-regular", serif;
+  font-size: 1.9rem;
+  color: #737373;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1203,14 +1209,15 @@ button::-moz-focus-inner, input::-moz-focus-inner {
   -moz-column-gap: 20px;
   -webkit-column-count: 4;
   -webkit-column-gap: 20px;
-  column-count: 3;
+  column-count: 2;
   column-gap: 20px;
+  font-family: "poppins-semibold", sans-serif;
   list-style: none;
   list-style-position: outside;
 }
 
 #software-expertise {
-  border-right: 1px #757575 solid;
+  border-right: 1px #cfcece solid;
 }
 
 .about-content * {
@@ -1233,6 +1240,10 @@ button::-moz-focus-inner, input::-moz-focus-inner {
   letter-spacing: 0.4rem;
 }
 
+.rdm-color {
+  color: #4f5053;
+}
+
 /**
  * responsive:
  * common styles
@@ -1249,6 +1260,11 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 
   #software-expertise {
     border-right: none;
+    border-bottom: 1px #cfcece solid;
+  }
+
+  #skill2 {
+    margin-top: 3rem;
   }
 }
 @media only screen and (max-width: 600px) {
@@ -1298,7 +1314,7 @@ header .top-bar {
 
 header .logo a {
   float: left;
-  margin-left: 5rem;
+  margin-left: 20px;
   margin-right: 10rem;
   position: absolute;
   top: 22%;
@@ -1780,16 +1796,23 @@ Hide burger button till mobile
 }
 
 .intro-info img {
-  height: 9rem;
-  width: 9rem;
+  /*height: 9rem;*/
+  width: auto;
+  height: auto;
+  max-width: 240px;
+  max-height: 240px;
+  margin-right: 20px;
   border-radius: 50%;
-  margin: 0.9rem 0 0 0;
-  float: left;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
 }
 
 .intro-info .lead {
   text-align: left;
-  padding-left: 13rem;
+}
+
+#about-me-text {
+  /*padding-left: 13rem;*/
 }
 
 .about-content {
@@ -1861,9 +1884,33 @@ Hide burger button till mobile
   }
 }
 @media only screen and (max-width: 768px) {
+  #about-me-text {
+    margin-left: 0 !important;
+  }
+
   .intro-info img {
-    height: 7.8rem;
-    width: 7.8rem;
+    display: block;
+    margin-right: 0;
+  }
+
+  #about .intro-info {
+    display: block !important;
+  }
+
+  .intro-info {
+    text-align: center;
+    margin-top: 3rem;
+  }
+
+  .intro-info img {
+    float: none;
+    display: inline-block;
+  }
+
+  .intro-info .lead {
+    padding-left: 0 !important;
+    margin-top: 3rem;
+    text-align: center;
   }
 
   .intro-info .lead {
@@ -1885,24 +1932,6 @@ Hide burger button till mobile
 
   .button-section [class*=col-] .button:first-child {
     margin-right: 0;
-  }
-}
-@media only screen and (max-width: 600px) {
-  .intro-info {
-    text-align: center;
-    margin-top: 3rem;
-  }
-
-  .intro-info img {
-    height: 6.6rem;
-    width: 6.6rem;
-    float: none;
-    display: inline-block;
-  }
-
-  .intro-info .lead {
-    padding-left: 0;
-    text-align: center;
   }
 }
 /**
@@ -3006,6 +3035,33 @@ footer .copyright span:last-child::after {
 
 * {
   # border: 1 px red solid;
+}
+
+#skills {
+  background: #FFFFFF;
+  padding-top: 12rem;
+  padding-bottom: 15rem;
+}
+
+#skills .section-intro {
+  margin-bottom: 3rem;
+}
+
+#skills .lead, #skills {
+  text-align: center;
+  padding-left: 0;
+}
+
+#about .button {
+  margin-top: 6rem;
+}
+
+#about-me-text {
+  margin-left: 3rem;
+}
+
+#about .intro-info {
+  display: flex;
 }
 
 /*# sourceMappingURL=main.css.map */

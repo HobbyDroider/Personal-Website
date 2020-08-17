@@ -1,314 +1,363 @@
-/** 
+/**
  * ===================================================================
  * main js
  *
- * ------------------------------------------------------------------- 
- */ 
-
-(function($) {
-
-	"use strict";
-
-	/*---------------------------------------------------- */
-	/* Preloader
-	------------------------------------------------------ */ 
-   $(window).load(function() {
-
-      // will first fade out the loading animation 
-    	$("#loader").fadeOut("slow", function(){
-
-        // will fade out the whole DIV that covers the website.
-        $("#preloader").delay(300).fadeOut("slow");
-
-      });       
-
-  	})
+ * -------------------------------------------------------------------
+ */
 
 
+(function ($) {
+
+    "use strict";
+
+    /*---------------------------------------------------- */
+    /* Preloader
+    ------------------------------------------------------ */
+    $(window).load(function () {
+        let i;
+        const li_ul = document.querySelectorAll(".col_ul li  ul");
+        for (i = 0; i < li_ul.length; i++) {
+            li_ul[i].style.display = "none"
+        }
+
+        var exp_li = document.querySelectorAll(".col_ul li > span");
+        for (i = 0; i < exp_li.length; i++) {
+            exp_li[i].style.cursor = "pointer";
+            exp_li[i].onclick = showul;
+        }
+        function showul () {
+            const nextul = this.nextElementSibling;
+            if(nextul.style.display === "block")
+                nextul.style.display = "none";
+            else
+                nextul.style.display = "block";
+        }
+        // will first fade out the loading animation
+        $("#loader").fadeOut("slow", function () {
+
+            // will fade out the whole DIV that covers the website.
+            $("#preloader").delay(300).fadeOut("slow");
+
+        });
+
+    })
 
 
+    /*---------------------------------------------------- */
+    /* FitText Settings
+    ------------------------------------------------------ */
+    setTimeout(function () {
+
+        $('#intro h1').fitText(1, {minFontSize: '42px', maxFontSize: '84px'});
+
+    }, 100);
 
 
-	/*---------------------------------------------------- */
-  	/* FitText Settings
-  	------------------------------------------------------ */
-  	setTimeout(function() {
-
-   	$('#intro h1').fitText(1, { minFontSize: '42px', maxFontSize: '84px' });
-
-  	}, 100);
+    /*---------------------------------------------------- */
+    /* FitVids
+    ------------------------------------------------------ */
+    $(".fluid-video-wrapper").fitVids();
 
 
-	/*---------------------------------------------------- */
-	/* FitVids
-	------------------------------------------------------ */ 
-  	$(".fluid-video-wrapper").fitVids();
-
-
-	/*---------------------------------------------------- */
-	/* Owl Carousel
-	------------------------------------------------------ */ 
-	$("#owl-slider").owlCarousel({
+    /*---------------------------------------------------- */
+    /* Owl Carousel
+    ------------------------------------------------------ */
+    $("#owl-slider").owlCarousel({
         navigation: false,
         pagination: true,
-        itemsCustom : [
-	        [0, 1],
-	        [700, 2],
-	        [960, 3]
-	     ],
+        itemsCustom: [
+            [0, 1],
+            [700, 2],
+            [960, 3]
+        ],
         navigationText: false
     });
 
 
-	/*----------------------------------------------------- */
-	/* Alert Boxes
-  	------------------------------------------------------- */
-	$('.alert-box').on('click', '.close', function() {
-	  $(this).parent().fadeOut(500);
-	});	
+    /*----------------------------------------------------- */
+    /* Alert Boxes
+      ------------------------------------------------------- */
+    $('.alert-box').on('click', '.close', function () {
+        $(this).parent().fadeOut(500);
+    });
 
 
-	/*----------------------------------------------------- */
-	/* Stat Counter
-  	------------------------------------------------------- */
-   var statSection = $("#stats"),
-       stats = $(".stat-count");
+    /*----------------------------------------------------- */
+    /* Stat Counter
+      ------------------------------------------------------- */
+    var statSection = $("#stats"),
+        stats = $(".stat-count");
 
-   statSection.waypoint({
+    statSection.waypoint({
 
-   	handler: function(direction) {
+        handler: function (direction) {
 
-      	if (direction === "down") {       		
+            if (direction === "down") {
 
-			   stats.each(function () {
-				   var $this = $(this);
+                stats.each(function () {
+                    var $this = $(this);
 
-				   $({ Counter: 0 }).animate({ Counter: $this.text() }, {
-				   	duration: 4000,
-				   	easing: 'swing',
-				   	step: function (curValue) {
-				      	$this.text(Math.ceil(curValue));
-				    	}
-				  	});
-				});
+                    $({Counter: 0}).animate({Counter: $this.text()}, {
+                        duration: 4000,
+                        easing: 'swing',
+                        step: function (curValue) {
+                            $this.text(Math.ceil(curValue));
+                        }
+                    });
+                });
 
-       	} 
+            }
 
-       	// trigger once only
-       	this.destroy();      	
+            // trigger once only
+            this.destroy();
 
-		},
-			
-		offset: "90%"
-	
-	});	
+        },
 
+        offset: "90%"
 
-	/*---------------------------------------------------- */
-	/*	Masonry
-	------------------------------------------------------ */
-	var containerProjects = $('#folio-wrapper');
+    });
 
-	containerProjects.imagesLoaded( function() {
 
-		containerProjects.masonry( {		  
-		  	itemSelector: '.folio-item',
-		  	resize: true 
-		});
+    /*---------------------------------------------------- */
+    /*	Masonry
+    ------------------------------------------------------ */
+    var containerProjects = $('#folio-wrapper');
 
-	});
+    containerProjects.imagesLoaded(function () {
 
+        containerProjects.masonry({
+            itemSelector: '.folio-item',
+            resize: true
+        });
 
-	/*----------------------------------------------------*/
-	/*	Modal Popup
-	------------------------------------------------------*/
-   $('.item-wrap a').magnificPopup({
+    });
 
-      type:'inline',
-      fixedContentPos: false,
-      removalDelay: 300,
-      showCloseBtn: false,
-      mainClass: 'mfp-fade'
 
-   });
+    /*----------------------------------------------------*/
+    /*	Modal Popup
+    ------------------------------------------------------*/
+    $('.item-wrap a').magnificPopup({
 
-   $(document).on('click', '.popup-modal-dismiss', function (e) {
-   	e.preventDefault();
-   	$.magnificPopup.close();
-   });
+        type: 'inline',
+        fixedContentPos: false,
+        removalDelay: 300,
+        showCloseBtn: false,
+        mainClass: 'mfp-fade'
 
-	
-	/*-----------------------------------------------------*/
-  	/* Navigation Menu
-   ------------------------------------------------------ */
+    });
 
+    $(document).on('click', '.popup-modal-dismiss', function (e) {
+        e.preventDefault();
+        $.magnificPopup.close();
+    });
 
-   var toggleButton = $('.menu-toggle'),
-       nav = $('.main-navigation');
 
-   // toggle button
-   toggleButton.on('click', function(e) {
+    /*-----------------------------------------------------*/
+    /* Navigation Menu
+ ------------------------------------------------------ */
 
-		e.preventDefault();
-		toggleButton.toggleClass('is-clicked');
-		nav.slideToggle();
 
-	});
+    var toggleButton = $('.menu-toggle'),
+        nav = $('.main-navigation');
 
-   // nav items
-  	nav.find('li a').on("click", function() {   
+    // toggle button
+    toggleButton.on('click', function (e) {
 
-   	// update the toggle button 		
-   	toggleButton.toggleClass('is-clicked'); 
-   	// fadeout the navigation panel
-   	nav.fadeOut();   		
-   	     
-  	});
+        e.preventDefault();
+        toggleButton.toggleClass('is-clicked');
+        nav.slideToggle();
 
+    });
 
-   /*---------------------------------------------------- */
-  	/* Highlight the current section in the navigation bar
-  	------------------------------------------------------ */
-	var sections = $("section"),
-	navigation_links = $("#nav li a");
+    // nav items
+    nav.find('li a').on("click", function () {
 
-	sections.waypoint( {
+        // update the toggle button
+        toggleButton.toggleClass('is-clicked');
+        // fadeout the navigation panel
+        nav.fadeOut();
 
-       handler: function(direction) {
+    });
 
-		   var active_section;
 
-			active_section = $('section#' + this.element.id);
+    /*---------------------------------------------------- */
+    /* Highlight the current section in the navigation bar
+    ------------------------------------------------------ */
+    var sections = $("section"),
+        navigation_links = $("#nav li a");
 
-			if (direction === "up") active_section = active_section.prev();
+    sections.waypoint({
 
-			var active_link = $('#nav a[href="#' + active_section.attr("id") + '"]');
+        handler: function (direction) {
 
-         navigation_links.parent().removeClass("current");
-			active_link.parent().addClass("current");
+            var active_section;
 
-		}, 
+            active_section = $('section#' + this.element.id);
 
-		offset: '25%'
-	});
+            if (direction === "up") active_section = active_section.prev();
 
+            var active_link = $('#nav a[href="#' + active_section.attr("id") + '"]');
 
-	/*---------------------------------------------------- */
-  	/* Smooth Scrolling
-  	------------------------------------------------------ */
-  	$('.smoothscroll').on('click', function (e) {
-	 	
-	 	e.preventDefault();
+            navigation_links.parent().removeClass("current");
+            active_link.parent().addClass("current");
 
-   	var target = this.hash,
-    	$target = $(target);
+        },
 
-    	$('html, body').stop().animate({
-       	'scrollTop': $target.offset().top
-      }, 400, 'swing', function () {
-      	window.location.hash = target;
-      });
+        offset: '25%'
+    });
 
-  	});
 
+    /*---------------------------------------------------- */
+    /* Smooth Scrolling
+    ------------------------------------------------------ */
+    $('.smoothscroll').on('click', function (e) {
 
+        e.preventDefault();
 
-  
+        var target = this.hash,
+            $target = $(target);
 
-   /*---------------------------------------------------- */
-	/*  Placeholder Plugin Settings
-	------------------------------------------------------ */ 
-	$('input, textarea, select').placeholder()  
+        $('html, body').stop().animate({
+            'scrollTop': $target.offset().top
+        }, 400, 'swing', function () {
+            window.location.hash = target;
+        });
 
+    });
 
-  	/*---------------------------------------------------- */
-	/*	contact form
-	------------------------------------------------------ */
+    // Sort ULs
 
-	/* local validation */
-	$('#contactForm').validate({
+    function sortUL(selector) {
+        var $ul = (selector);
+        $ul.find('li').sort(function (a, b) {
+            if ($(a).text().includes('...')) return 1;
 
-		/* submit via ajax */
-		submitHandler: function(form) {
+            var upA = $(a).text().toUpperCase();
+            var upB = $(b).text().toUpperCase();
 
-			var sLoader = $('#submit-loader');
 
-			$.ajax({      	
+            return (upA < upB) ? -1 : (upA > upB) ? 1 : 0;
+        }).appendTo(selector);
+    }
 
-		      type: "POST",
-		      url: "inc/sendEmail.php",
-		      data: $(form).serialize(),
-		      beforeSend: function() { 
+    $('.to_be_sorted').each(function (i, obj) {
+        sortUL($(this));
+    });
 
-		      	sLoader.fadeIn(); 
 
-		      },
-		      success: function(msg) {
+    function rdmColorSkills() {
+        let color_index = 0;
+        $('.rdm-color').each(function (i, obj) {
+            // if we already at it recolor the thing
 
-	            // Message was sent
-	            if (msg == 'OK') {
-	            	sLoader.fadeOut(); 
-	               $('#message-warning').hide();
-	               $('#contactForm').fadeOut();
-	               $('#message-success').fadeIn();   
-	            }
-	            // There was an error
-	            else {
-	            	sLoader.fadeOut(); 
-	               $('#message-warning').html(msg);
-		            $('#message-warning').fadeIn();
-	            }
 
-		      },
-		      error: function() {
+            $(this).css('color', randomColor({
+                luminosity: 'dark',
+                format: 'rgba',
+                alpha: 2.5,
+            }));
 
-		      	sLoader.fadeOut(); 
-		      	$('#message-warning').html("Something went wrong. Please try again.");
-		         $('#message-warning').fadeIn();
+            color_index++;
+        });
+    }
 
-		      }
 
-	      });     		
-  		}
 
-	});
 
+    /*---------------------------------------------------- */
+    /*  Placeholder Plugin Settings
+    ------------------------------------------------------ */
+    $('input, textarea, select').placeholder()
 
- 	/*----------------------------------------------------- */
-  	/* Back to top
-   ------------------------------------------------------- */ 
-	var pxShow = 300; // height on which the button will show
-	var fadeInTime = 400; // how slow/fast you want the button to show
-	var fadeOutTime = 400; // how slow/fast you want the button to hide
-	var scrollSpeed = 300; // how slow/fast you want the button to scroll to top. can be a value, 'slow', 'normal' or 'fast'
 
-   // Show or hide the sticky footer button
-	jQuery(window).scroll(function() {
+    /*---------------------------------------------------- */
+    /*	contact form
+    ------------------------------------------------------ */
 
-		if (!( $("#header-search").hasClass('is-visible'))) {
+    /* local validation */
+    $('#contactForm').validate({
 
-			if (jQuery(window).scrollTop() >= pxShow) {
-				jQuery("#go-top").fadeIn(fadeInTime);
-			} else {
-				jQuery("#go-top").fadeOut(fadeOutTime);
-			}
+        /* submit via ajax */
+        submitHandler: function (form) {
 
-		}		
+            var sLoader = $('#submit-loader');
 
-	});		
+            $.ajax({
+
+                type: "POST",
+                url: "inc/sendEmail.php",
+                data: $(form).serialize(),
+                beforeSend: function () {
+
+                    sLoader.fadeIn();
+
+                },
+                success: function (msg) {
+
+                    // Message was sent
+                    if (msg == 'OK') {
+                        sLoader.fadeOut();
+                        $('#message-warning').hide();
+                        $('#contactForm').fadeOut();
+                        $('#message-success').fadeIn();
+                    }
+                    // There was an error
+                    else {
+                        sLoader.fadeOut();
+                        $('#message-warning').html(msg);
+                        $('#message-warning').fadeIn();
+                    }
+
+                },
+                error: function () {
+
+                    sLoader.fadeOut();
+                    $('#message-warning').html("Something went wrong. Please try again.");
+                    $('#message-warning').fadeIn();
+
+                }
+
+            });
+        }
+
+    });
+
+
+    /*----------------------------------------------------- */
+    /* Back to top
+ ------------------------------------------------------- */
+    var pxShow = 300; // height on which the button will show
+    var fadeInTime = 400; // how slow/fast you want the button to show
+    var fadeOutTime = 400; // how slow/fast you want the button to hide
+    var scrollSpeed = 300; // how slow/fast you want the button to scroll to top. can be a value, 'slow', 'normal' or 'fast'
+
+    // Show or hide the sticky footer button
+    jQuery(window).scroll(function () {
+
+        if (!($("#header-search").hasClass('is-visible'))) {
+
+            if (jQuery(window).scrollTop() >= pxShow) {
+                jQuery("#go-top").fadeIn(fadeInTime);
+            } else {
+                jQuery("#go-top").fadeOut(fadeOutTime);
+            }
+
+        }
+
+    });
 
 })(jQuery);
 
 
 window.onload = function () {
 
-	/*Hiding the navigation on the first site*/
-	$('header').hide();
-	$(window).scroll(function () {
-		if ($(this).scrollTop() >= $('#intro').height() - 1) {
-			$('header').fadeIn(200);
-		} else {
-			$('header').fadeOut(200);
-		}
-	});
+    /*Hiding the navigation on the first site*/
+    $('header').hide();
+    $(window).scroll(function () {
+        if ($(this).scrollTop() >= $('#intro').height() - 1) {
+            $('header').fadeIn(200);
+        } else {
+            $('header').fadeOut(200);
+        }
+    });
 }
