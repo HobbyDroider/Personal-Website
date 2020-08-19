@@ -43,55 +43,6 @@
  *
  * -------------------------------------------------------------------
  */
-/*Changes*/
-#more-button {
-  margin-top: 5em;
-}
-
-#skills {
-  background: #FFFFFF;
-  padding-top: 12rem;
-  padding-bottom: 15rem;
-}
-
-#skills .section-intro {
-  margin-bottom: 3rem;
-}
-
-#skills .lead, #skills {
-  text-align: center;
-  padding-left: 0;
-}
-
-#about .button {
-  margin-top: 6rem;
-}
-
-#about-me-text {
-  margin-left: 3rem;
-}
-
-#about .intro-info {
-  display: flex;
-}
-
-.intro-info p {
-  display: flex;
-  margin-bottom: 0;
-  align-items: center;
-  justify-content: center;
-}
-
-#about-me-text {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#skills .about-content {
-  margin-top: 6rem;
-}
-
 html {
   font-size: 10px;
 }
@@ -1271,13 +1222,11 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 }
 
 .about-content ul li strong {
-  color: #156694;
+  color: #313131;
 }
 
 #skill2 ul li strong {
-  color: #702bb5;
-  color: #702bb5;
-  color: #27779b;
+  color: #313131;
 }
 
 #software-expertise {
@@ -3105,6 +3054,60 @@ footer .copyright span:last-child::after {
 
 #go-top a:hover {
   background: #000000;
+}
+
+/*Changes*/
+#more-button {
+  margin-top: 5em;
+}
+
+#skills {
+  background: #FFFFFF;
+  padding-top: 12rem;
+  padding-bottom: 15rem;
+}
+
+#skills .section-intro {
+  margin-bottom: 3rem;
+}
+
+#skills .lead, #skills {
+  text-align: center;
+  padding-left: 0;
+}
+
+#about .button {
+  margin-top: 6rem;
+}
+
+#about-me-text {
+  margin-left: 3rem;
+}
+
+#about .intro-info {
+  display: flex;
+}
+
+.intro-info p {
+  display: flex;
+  margin-bottom: 0;
+  align-items: center;
+  justify-content: center;
+}
+
+#about-me-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#skills .about-content {
+  margin-top: 6rem;
+}
+
+.popup-modal .description-box p {
+  font-size: 1.3rem;
+  line-height: 1.8rem;
 }
 
 /*# sourceMappingURL=main.css.map */
