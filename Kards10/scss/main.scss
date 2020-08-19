@@ -54,6 +54,60 @@ $bg-jpg: #3d84ab;
 $nav-color: #ffffff;
 $skill-sep: #cfcece;
 
+/*Changes*/
+
+
+#more-button {
+  margin-top: 5em;
+}
+
+
+#skills {
+  background: #FFFFFF;
+  padding-top: 12rem;
+  padding-bottom: 15rem;
+}
+
+#skills .section-intro {
+  margin-bottom: 3rem;
+}
+
+#skills .lead, #skills {
+  text-align: center;
+  padding-left: 0;
+}
+
+#about .button {
+  margin-top: 6rem;
+}
+
+
+#about-me-text {
+  margin-left: 3rem;
+}
+
+#about .intro-info {
+  display: flex;
+}
+
+.intro-info p {
+  display: flex;
+  margin-bottom: 0;
+  align-items: center;
+  justify-content: center;
+}
+
+#about-me-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#skills .about-content{
+  margin-top: 6rem;
+}
+
+
 html {
   font-size: 10px;
 }
@@ -218,6 +272,10 @@ blockquote {
   margin: 3rem 0;
   padding-left: 4rem;
   position: relative;
+}
+
+.timeline-header h3{
+  font-size: 1.8rem;
 }
 
 blockquote:before {
@@ -1229,15 +1287,26 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 }
 
 .about-content ul {
-  -moz-column-count: 4;
+  -moz-column-count: 3;
   -moz-column-gap: 20px;
-  -webkit-column-count: 4;
+  -webkit-column-count: 3;
   -webkit-column-gap: 20px;
-  column-count: 2;
+  column-count: 3;
   column-gap: 20px;
   font-family: "poppins-semibold", sans-serif;
   list-style: none;
   list-style-position: outside;
+  white-space: nowrap;
+}
+
+.about-content ul li strong{
+  color: #156694;
+}
+
+#skill2 ul li strong{
+  color: #702bb5;
+  color: #702bb5;
+  color: #27779b;
 }
 
 #software-expertise {
@@ -1298,8 +1367,22 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     font-size: 1.5rem;
     letter-spacing: .3rem;
   }
-}
 
+  #about .button {
+    margin-top: 3rem!important;
+  }
+}
+@media only screen and (max-width: 500px) {
+  #skills .about-content ul {
+    -moz-column-count: 2;
+    -webkit-column-count: 2;
+    column-count: 2;
+  }
+  #skills .about-content{
+    margin-top: 3rem;
+  }
+
+}
 @media only screen and (max-width: 400px) {
   .section-intro h1 {
     font-size: 2.4rem;
@@ -1333,7 +1416,7 @@ header .top-bar {
   width: 100%;
   min-height: 56px;
   left: 0;
-  top: 0;
+  top: 0 !important;
   /*box-shadow: 0px 24px 64px rgba(0,0,0,0.24);*/
   /*border-radius: 0 0 10px 10px; */
 }
@@ -3056,43 +3139,6 @@ footer .copyright span:last-child::after {
   background: #000000;
 }
 
-/*Changes*/
 
-
-#more-button {
-  margin-top: 5em;
-}
-
-* {
-# border:1 px red solid;
-}
-
-#skills {
-  background: #FFFFFF;
-  padding-top: 12rem;
-  padding-bottom: 15rem;
-}
-
-#skills .section-intro {
-  margin-bottom: 3rem;
-}
-
-#skills .lead, #skills {
-  text-align: center;
-  padding-left: 0;
-}
-
-#about .button {
-  margin-top: 6rem;
-}
-
-
-#about-me-text {
-  margin-left: 3rem;
-}
-
-#about .intro-info {
-  display: flex;
-}
 
 /*# sourceMappingURL=main.css.map */

@@ -25,13 +25,15 @@
             exp_li[i].style.cursor = "pointer";
             exp_li[i].onclick = showul;
         }
-        function showul () {
+
+        function showul() {
             const nextul = this.nextElementSibling;
-            if(nextul.style.display === "block")
+            if (nextul.style.display === "block")
                 nextul.style.display = "none";
             else
                 nextul.style.display = "block";
         }
+
         // will first fade out the loading animation
         $("#loader").fadeOut("slow", function () {
 
@@ -137,13 +139,10 @@
     /*	Modal Popup
     ------------------------------------------------------*/
     $('.item-wrap a').magnificPopup({
-
         type: 'inline',
         fixedContentPos: false,
-        removalDelay: 300,
         showCloseBtn: false,
         mainClass: 'mfp-fade'
-
     });
 
     $(document).on('click', '.popup-modal-dismiss', function (e) {
@@ -246,22 +245,41 @@
 
 
     function rdmColorSkills() {
-        let color_index = 0;
         $('.rdm-color').each(function (i, obj) {
             // if we already at it recolor the thing
 
 
-            $(this).css('color', randomColor({
-                luminosity: 'dark',
-                format: 'rgba',
-                alpha: 2.5,
-            }));
+            /*  $(this).css('color', randomColor({
+                  luminosity: 'dark',
+                  format: 'rgba',
+                  alpha: 2.5,
+              }));*/
 
-            color_index++;
+            let colors = [
+                '#e53935',
+                '#d81b60',
+                '#8e24aa',
+                '#5e35b1',
+                '#3949ab',
+                '#1e88e5',
+                '#039be5',
+                '#00acc1',
+                '#00897b',
+               /* '#43a047',
+                '#7cb342',*/
+               /* '#c0ca33',*/
+               /* '#fdd835',*/
+                '#ffb300',
+                '#fb8c00',
+                '#f4511e',
+                '#6d4c41',
+                '#546e7a',
+            ];
+            $(this).css('color', colors[Math.floor(Math.random() * colors.length)]);
         });
     }
 
-
+    //rdmColorSkills();
 
 
     /*---------------------------------------------------- */
