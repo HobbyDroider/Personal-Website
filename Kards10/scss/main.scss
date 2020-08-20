@@ -221,7 +221,7 @@ blockquote {
   position: relative;
 }
 
-.timeline-header h3{
+.timeline-header h3 {
   font-size: 1.8rem;
 }
 
@@ -1246,14 +1246,34 @@ button::-moz-focus-inner, input::-moz-focus-inner {
   white-space: nowrap;
 }
 
-.about-content ul li strong{
+.about-content ul li strong {
   color: #313131;
+  font-family: "poppins-semibold", sans-serif;
+  font-size: 1.5rem;
 }
 
-#skill2 ul li strong{
-  color: #313131;
+.close {
+  cursor: pointer;
+  position: absolute;
+  top: 24px;
+  transform: translate(0%, -50%);
+  right: 0px;
+  color: #FFF;
+  text-align: center;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  background: #000;
+  z-index: 700;
 }
 
+.popup-modal {
+  position: relative !important;
+}
+
+.close:hover {
+  background: $side-color;
+}
 
 #software-expertise {
   border-right: 1px $skill-sep solid;
@@ -1315,20 +1335,22 @@ button::-moz-focus-inner, input::-moz-focus-inner {
   }
 
   #about .button {
-    margin-top: 3rem!important;
+    margin-top: 3rem !important;
   }
 }
+
 @media only screen and (max-width: 500px) {
   #skills .about-content ul {
     -moz-column-count: 2;
     -webkit-column-count: 2;
     column-count: 2;
   }
-  #skills .about-content{
+  #skills .about-content {
     margin-top: 3rem;
   }
 
 }
+
 @media only screen and (max-width: 400px) {
   .section-intro h1 {
     font-size: 2.4rem;
@@ -1849,7 +1871,7 @@ Hide burger button till mobile
   margin-bottom: 3rem;
 }
 
-.intro-info {
+#about .intro-info {
   margin-top: 4.2rem;
   margin-right: -30px;
   margin-left: -30px;
@@ -2192,7 +2214,6 @@ Hide burger button till mobile
   position: relative;
   overflow: hidden;
 }
-
 
 
 #portfolio .folio-item img {
@@ -3136,13 +3157,14 @@ footer .copyright span:last-child::after {
   justify-content: center;
 }
 
-#skills .about-content{
+#skills .about-content {
   margin-top: 6rem;
 }
 
-.popup-modal .description-box p{
+.popup-modal .description-box p {
   font-size: 1.3rem;
   line-height: 1.8rem;
 }
+
 
 /*# sourceMappingURL=main.css.map */
