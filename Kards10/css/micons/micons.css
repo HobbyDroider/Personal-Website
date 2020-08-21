@@ -522,6 +522,9 @@
 .icon-refresh:before {
     content: "\e9a5";
 }
+.icon-database:before {
+    content: "\e964";
+}
 .icon-rotate-clock:before {
     content: "\e9a6";
 }
