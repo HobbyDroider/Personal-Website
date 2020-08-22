@@ -47,6 +47,10 @@ html {
   font-size: 10px;
 }
 
+textarea {
+  resize: none;
+}
+
 @media only screen and (max-width: 1024px) {
   html {
     font-size: 9.4117647059px;
@@ -3134,6 +3138,18 @@ footer .copyright span:last-child::after {
 .popup-modal .description-box p {
   font-size: 1.3rem;
   line-height: 1.8rem;
+}
+
+.contact-info a {
+  margin: 4.8rem auto 0;
+  font-family: "poppins-regular", sans-serif;
+  font-size: 1.5rem;
+  text-align: center;
+  color: #626262;
+}
+
+.contact-info a:hover {
+  color: #1D8FCF;
 }
 
 /*# sourceMappingURL=main.css.map */

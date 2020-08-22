@@ -244,43 +244,6 @@
     });
 
 
-    function rdmColorSkills() {
-        $('.rdm-color').each(function (i, obj) {
-            // if we already at it recolor the thing
-
-
-            /*  $(this).css('color', randomColor({
-                  luminosity: 'dark',
-                  format: 'rgba',
-                  alpha: 2.5,
-              }));*/
-
-            let colors = [
-                '#e53935',
-                '#d81b60',
-                '#8e24aa',
-                '#5e35b1',
-                '#3949ab',
-                '#1e88e5',
-                '#039be5',
-                '#00acc1',
-                '#00897b',
-               /* '#43a047',
-                '#7cb342',*/
-               /* '#c0ca33',*/
-               /* '#fdd835',*/
-                '#ffb300',
-                '#fb8c00',
-                '#f4511e',
-                '#6d4c41',
-                '#546e7a',
-            ];
-            $(this).css('color', colors[Math.floor(Math.random() * colors.length)]);
-        });
-    }
-
-    //rdmColorSkills();
-
 
     /*---------------------------------------------------- */
     /*  Placeholder Plugin Settings
@@ -292,53 +255,16 @@
     /*	contact form
     ------------------------------------------------------ */
 
-    /* local validation */
-    $('#contactForm').validate({
 
-        /* submit via ajax */
-        submitHandler: function (form) {
-
-            var sLoader = $('#submit-loader');
-
-            $.ajax({
-
-                type: "POST",
-                url: "inc/sendEmail.php",
-                data: $(form).serialize(),
-                beforeSend: function () {
-
-                    sLoader.fadeIn();
-
-                },
-                success: function (msg) {
-
-                    // Message was sent
-                    if (msg == 'OK') {
-                        sLoader.fadeOut();
-                        $('#message-warning').hide();
-                        $('#contactForm').fadeOut();
-                        $('#message-success').fadeIn();
-                    }
-                    // There was an error
-                    else {
-                        sLoader.fadeOut();
-                        $('#message-warning').html(msg);
-                        $('#message-warning').fadeIn();
-                    }
-
-                },
-                error: function () {
-
-                    sLoader.fadeOut();
-                    $('#message-warning').html("Something went wrong. Please try again.");
-                    $('#message-warning').fadeIn();
-
-                }
-
-            });
-        }
-
-    });
+    /*$("#contact button.submitform").click(function () {
+        $('#contactForm').validate({
+            submitHandler: function (form) {
+                window.location.href = "mailto:josip.domazet.corp@gmail.com"
+                    + "?subject=" + encodeURIComponent($('#contactSubject').val())
+                    + "&body=" + encodeURIComponent($('#contactMessage').val());
+            }
+        })
+    });*/
 
 
     /*----------------------------------------------------- */
@@ -363,6 +289,7 @@
         }
 
     });
+
 
 })(jQuery);
 
