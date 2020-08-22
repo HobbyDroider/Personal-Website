@@ -33,13 +33,20 @@
      ================================================== -->
     <link rel="icon" type="image/png" href="favicon.png">
 
+    <style>
+        ul {
+            list-style: none;
+            text-align: center;
+        }
+
+        ul li{
+            display:block;
+        }
+    </style>
+
 </head>
 
 <body id="top">
-
-
-
-
 
 
 <!-- contact
@@ -54,15 +61,20 @@
         </div>
     </div>
     <div class="row contact-info">
-        <div class="col-four tab-full collapse">
+        <div class="col-twelve tab-full collapse">
 
             <div class="icon">
-                <i class="icon-mail"></i>
+                <i class="icon-info"></i>
             </div>
 
-            <h5>Email Me At</h5>
 
-            <a href="mailto:josip.domazet.corp@gmail.com">josip.domazet.corp@gmail.com</a>
+            <ul>
+                <li>Media Owner: Josip Domazet</li>
+                <li>Line of Business: self-promotion, IT services & products</li>
+                <li>Place of Residence:  Fischerweg 1/1/6, 2440 Gramatneusiedl (Austria)
+            </ul>
+
+            <button onclick="previous()"  class="button">Go Back</button>
         </div>
 
 
@@ -92,7 +104,6 @@
         <div class="tab-full align-center text-center">
             <div class="copyright">
                 <span>© Copyright Josip Domazet 2020.</span>
-                <span><a href="legal.html">Legal Notice</a></span>
                 <span>Original Design by <a href="http://www.styleshout.com/">styleshout</a></span>
             </div>
         </div>
@@ -108,6 +119,11 @@
     <div id="loader"></div>
 </div>
 
+<script>
+    function previous() {
+        window.history.back();
+    }
+</script>
 <!-- Java Script
 ================================================== -->
 <script src="js/jquery-2.1.3.min.js"></script>
