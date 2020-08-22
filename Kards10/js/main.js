@@ -150,6 +150,9 @@
         $.magnificPopup.close();
     });
 
+    function ceasar(s) {
+        return s.split("").reverse().join("")
+    }
 
     /*-----------------------------------------------------*/
     /* Navigation Menu
@@ -225,6 +228,9 @@
     });
 
     // Sort ULs
+    String.prototype.includes = function (str) {
+        return this.indexOf(str) !== -1;
+    }
 
     function sortUL(selector) {
         var $ul = (selector);
@@ -244,7 +250,6 @@
     });
 
 
-
     /*---------------------------------------------------- */
     /*  Placeholder Plugin Settings
     ------------------------------------------------------ */
@@ -254,17 +259,16 @@
     /*---------------------------------------------------- */
     /*	contact form
     ------------------------------------------------------ */
+    $('#email').text(ceasar('moc.liamg@proc.tezamod.pisoj'));
+    $('#email').on('click', function () {
+        $(this).attr('href', ceasar('moc.liamg@proc.tezamod.pisoj:otliam'));
+    });
 
+    $('#place').html(ceasar('airtsuA' +
+        '>/rb<ldeisuentamarG 0442' +
+        '>/rb<6/1/1 gewrehcsiF'));
 
-    /*$("#contact button.submitform").click(function () {
-        $('#contactForm').validate({
-            submitHandler: function (form) {
-                window.location.href = "mailto:josip.domazet.corp@gmail.com"
-                    + "?subject=" + encodeURIComponent($('#contactSubject').val())
-                    + "&body=" + encodeURIComponent($('#contactMessage').val());
-            }
-        })
-    });*/
+    $('#mob').text(ceasar("5593174 676 34+ :eliboM"));
 
 
     /*----------------------------------------------------- */
