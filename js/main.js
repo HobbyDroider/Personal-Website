@@ -299,6 +299,7 @@
 
 })(jQuery);
 
+$().lazyLoad()
 
 window.onload = function () {
 
