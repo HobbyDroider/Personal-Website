@@ -1635,7 +1635,7 @@ Hide burger button till mobile
   width: 100%;
   height: 100%;
   background: #111111;
-  opacity: 0.65;
+  opacity: 0.75;
 }
 
 .intro-content {
@@ -1845,12 +1845,11 @@ Hide burger button till mobile
 
 #about .section-intro {
   margin-bottom: 3rem;
+  max-width: 800px;
 }
 
 #about .intro-info {
   margin-top: 4.2rem;
-  margin-right: -30px;
-  margin-left: -30px;
 }
 
 .intro-info img {
@@ -1860,9 +1859,9 @@ Hide burger button till mobile
   max-width: 240px;
   max-height: 240px;
   margin-right: 20px;
-  border-radius: 50%;
+  /*border-radius: 50%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  transition: 0.3s;
+  transition: 0.3s;*/
 }
 
 .intro-info .lead {
@@ -1953,6 +1952,10 @@ Hide burger button till mobile
 
   #about .intro-info {
     display: block !important;
+  }
+
+  #about {
+    padding-bottom: 3rem;
   }
 
   .intro-info {
