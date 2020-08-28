@@ -262,6 +262,7 @@
     $('#email').text(ceasar('moc.liamg@proc.tezamod.pisoj'));
     $('#email').on('click', function () {
         $(this).attr('href', ceasar('moc.liamg@proc.tezamod.pisoj:otliam'));
+
     });
 
     $('#place').html(ceasar('airtsuA' +
@@ -270,6 +271,7 @@
 
     $('#mob').text(ceasar("5593174 676 34+ :eliboM"));
 
+    //resize todo image
 
     /*----------------------------------------------------- */
     /* Back to top

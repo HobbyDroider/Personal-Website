@@ -3152,6 +3152,15 @@ footer .copyright span:last-child::after {
   color: #1D8FCF;
 }
 
+#imagetodo {
+  background: #1D8FCF !important;
+  background-color: #a3fcff;
+}
+
+#folio-wrapper {
+  display: flex;
+}
+
 /*# sourceMappingURL=main.css.map */
 
 /*# sourceMappingURL=main.css.map */

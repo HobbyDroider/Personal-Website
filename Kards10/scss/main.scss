@@ -59,7 +59,7 @@ html {
   font-size: 10px;
 }
 
-textarea{
+textarea {
   resize: none;
 }
 
@@ -1289,8 +1289,6 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 #software-expertise {
   border-right: 1px $skill-sep solid;
 }
-
-
 
 
 .about-content * {
@@ -3180,7 +3178,7 @@ footer .copyright span:last-child::after {
   line-height: 1.8rem;
 }
 
-.contact-info a{
+.contact-info a {
   margin: 4.8rem auto 0;
   font-family: "poppins-regular", sans-serif;
   font-size: 1.5rem;
@@ -3188,9 +3186,17 @@ footer .copyright span:last-child::after {
   color: #626262;
 }
 
-.contact-info a:hover{
+.contact-info a:hover {
   color: #1D8FCF;
 }
 
+#imagetodo {
+  background: #1D8FCF !important;
+  background-color: #a3fcff;
+}
+
+#folio-wrapper{
+  display: flex;
+}
 
 /*# sourceMappingURL=main.css.map */
