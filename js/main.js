@@ -299,8 +299,6 @@
 
 })(jQuery);
 
-$().lazyLoad()
-
 window.onload = function () {
 
     /*Hiding the navigation on the first site*/
