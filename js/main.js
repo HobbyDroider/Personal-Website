@@ -185,28 +185,37 @@
     /*---------------------------------------------------- */
     /* Highlight the current section in the navigation bar
     ------------------------------------------------------ */
-    var sections = $("section"),
-        navigation_links = $("#nav li a");
 
-    sections.waypoint({
+    let sections = $("section"),
+        navigationLinks = $("#nav li a"),
+        navHeight = $("#nav").height();
 
-        handler: function (direction) {
+    let topSectionCurrent;
+    let topSectionNext;
+    let scrollPos;
 
-            var active_section;
 
-            active_section = $('section#' + this.element.id);
+    var throttled = throttle(function () {
+        scrollPos = document.documentElement.scrollTop || document.body.scrollTop;
 
-            if (direction === "up") active_section = active_section.prev();
+        sections.each(function (i, obj) {
+            topSectionCurrent = $(obj).position().top - navHeight;
+            topSectionNext =
+                i < sections.length - 1
+                    ? $(sections[i + 1]).position().top - navHeight
+                    : Number.MAX_SAFE_INTEGER;
 
-            var active_link = $('#nav a[href="#' + active_section.attr("id") + '"]');
+            if (scrollPos + 1 >= topSectionCurrent && scrollPos < topSectionNext) {
+                let active_link = $('#nav a[href="#' + $(obj).attr("id") + '"]');
+                navigationLinks.parent().removeClass("current");
+                active_link.parent().addClass("current");
+            }
+        });
 
-            navigation_links.parent().removeClass("current");
-            active_link.parent().addClass("current");
 
-        },
+    }, 50);
 
-        offset: '25%'
-    });
+    $(window).scroll(throttled);
 
 
     /*---------------------------------------------------- */
@@ -311,4 +320,53 @@ window.onload = function () {
             $('header').fadeOut(200);
         }
     });
+}
+
+/*Underscore.js 1.11.0
+https://underscorejs.org
+(c) 2009-2020 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+Underscore may be freely distributed under the MIT license.*/
+function throttle(func, wait, options) {
+    var now = Date.now || function () {
+        return new Date().getTime();
+    };
+
+    var timeout, context, args, result;
+    var previous = 0;
+    if (!options) options = {};
+
+    var later = function () {
+        previous = options.leading === false ? 0 : now();
+        timeout = null;
+        result = func.apply(context, args);
+        if (!timeout) context = args = null;
+    };
+
+    var throttled = function () {
+        var _now = now();
+        if (!previous && options.leading === false) previous = _now;
+        var remaining = wait - (_now - previous);
+        context = this;
+        args = arguments;
+        if (remaining <= 0 || remaining > wait) {
+            if (timeout) {
+                clearTimeout(timeout);
+                timeout = null;
+            }
+            previous = _now;
+            result = func.apply(context, args);
+            if (!timeout) context = args = null;
+        } else if (!timeout && options.trailing !== false) {
+            timeout = setTimeout(later, remaining);
+        }
+        return result;
+    };
+
+    throttled.cancel = function () {
+        clearTimeout(timeout);
+        previous = 0;
+        timeout = context = args = null;
+    };
+
+    return throttled;
 }
