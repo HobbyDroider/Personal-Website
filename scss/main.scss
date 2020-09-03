@@ -3202,4 +3202,9 @@ footer .copyright span:last-child::after {
   display: flex;
 }
 
+::selection {
+  background: #528fcf;
+  color: #fff;
+}
+
 /*# sourceMappingURL=main.css.map */
