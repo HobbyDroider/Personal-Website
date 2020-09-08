@@ -205,9 +205,18 @@
                     ? $(sections[i + 1]).position().top - navHeight
                     : Number.MAX_SAFE_INTEGER;
 
-            if (scrollPos + 1 >= topSectionCurrent && scrollPos < topSectionNext) {
-                let active_link = $('#nav a[href="#' + $(obj).attr("id") + '"]');
+            var scrollMaxY = window.scrollMaxY || (document.documentElement.scrollHeight - document.documentElement.clientHeight)
+            console.log(scrollPos + "===" + scrollMaxY);
+
+
+            // Check for max scroll first
+            if (scrollPos >= scrollMaxY - 5) {
                 navigationLinks.parent().removeClass("current");
+                let active_link = $('#nav a[href="#contact"]');
+                active_link.parent().addClass("current");
+            } else if (scrollPos + 1 >= topSectionCurrent && scrollPos < topSectionNext) {
+                navigationLinks.parent().removeClass("current");
+                let active_link = $('#nav a[href="#' + $(obj).attr("id") + '"]');
                 active_link.parent().addClass("current");
             }
         });
