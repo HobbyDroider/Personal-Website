@@ -258,8 +258,11 @@
             var upA = $(a).text().toUpperCase();
             var upB = $(b).text().toUpperCase();
 
-
-            return (upA < upB) ? -1 : (upA > upB) ? 1 : 0;
+            if (upA < upB) {
+                return -1;
+            } else if (upA > upB) {
+                return 1;
+            } else return 0;
         }).appendTo(selector);
     }
 
