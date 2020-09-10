@@ -1250,6 +1250,10 @@ button::-moz-focus-inner, input::-moz-focus-inner {
   white-space: nowrap;
 }
 
+#soft-skills {
+  margin-top: 3rem;
+}
+
 .about-content ul li strong {
   color: #313131;
   font-family: "poppins-semibold", sans-serif;
@@ -1286,7 +1290,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
   background: $side-color;
 }
 
-#software-expertise {
+#software-skills {
   border-right: 1px $skill-sep solid;
 }
 
@@ -1327,17 +1331,22 @@ button::-moz-focus-inner, input::-moz-focus-inner {
   .section-intro h1 {
     font-size: 3rem;
   }
-  #software-expertise {
+  #software-skills, #network-skills {
     border-right: none;
     border-bottom: 1px $skill-sep solid;
   }
-
-  #skill2 {
+  #network-skills, #soft-skills {
     margin-top: 3rem;
   }
 }
 
 @media only screen and (max-width: 600px) {
+  #soft-skills ul {
+    -moz-column-count: 2;
+    -webkit-column-count: 2;
+    column-count: 2;
+  }
+
   .section-intro h1 {
     font-size: 2.6rem;
   }
@@ -1357,6 +1366,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     -webkit-column-count: 2;
     column-count: 2;
   }
+
   #skills .about-content {
     margin-top: 3rem;
   }
@@ -1366,6 +1376,12 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 @media only screen and (max-width: 400px) {
   .section-intro h1 {
     font-size: 2.4rem;
+  }
+
+  #soft-skills ul {
+    -moz-column-count: 1!important;
+    -webkit-column-count: 1!important;
+    column-count: 1!important;
   }
 }
 
