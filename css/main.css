@@ -3138,6 +3138,9 @@ footer .copyright span:last-child::after {
   margin-bottom: 0;
   align-items: center;
   justify-content: center;
+}
+
+#about .intro-info p {
   max-width: 500px !important;
 }
 

@@ -1379,9 +1379,9 @@ button::-moz-focus-inner, input::-moz-focus-inner {
   }
 
   #soft-skills ul {
-    -moz-column-count: 1!important;
-    -webkit-column-count: 1!important;
-    column-count: 1!important;
+    -moz-column-count: 1 !important;
+    -webkit-column-count: 1 !important;
+    column-count: 1 !important;
   }
 }
 
@@ -3180,7 +3180,12 @@ footer .copyright span:last-child::after {
   margin-bottom: 0;
   align-items: center;
   justify-content: center;
-  max-width: 500px!important;
+}
+
+#about .intro-info {
+  p {
+    max-width: 500px !important;
+  }
 }
 
 #about-me-text {
