@@ -3138,6 +3138,7 @@ footer .copyright span:last-child::after {
   margin-bottom: 0;
   align-items: center;
   justify-content: center;
+  max-width: 500px !important;
 }
 
 #about-me-text {
